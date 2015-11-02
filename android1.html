@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset="utf-8">
+    <title>Android: first code - GDG Vladivostok</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+    <style>
+
+        html {
+            background: url(img/android_alien_waving_left_full.png) no-repeat fixed bottom right; 
+        }
+
+        body {
+            padding-top: 10px;
+            font-size: 16pt;
+            font-family: Roboto;
+            background: transparent;
+        }
+        
+        h1, h2, h3, p, img
+        {
+          margin: 10pt;
+        }
+        
+        h1
+        {
+          font-size: 48pt;
+          font-family: Roboto;
+          font-weight: 300;
+          text-align: center;
+        }
+
+        /* Override B3 .panel adding a subtly transparent background */
+        .panel {
+            width: 85%;
+            background-color: rgba(240, 240, 255, 0.8);
+            margin: 5%;
+        }
+
+        .margin-base-vertical {
+            margin: 10px 0;
+        }
+
+        .more-space {
+            margin: 10%;
+            align: center;
+        }
+        
+        img.fit
+        {
+          max-width: 90%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 panel panel-default">
+                <h1>Android: first code</h2>
+                <h2>Мастер-класс по программированию под Android для начинающих</h3>
+                <hr>
+                <p>
+                Привет!
+                Этот небольшой мастер-класс подготовлен <a href="http://gplus.to/gdgvl">GDG Vladivostok</a> и <a href="https://plus.google.com/+СергейМелехин">+Сергей Мелехин</a> для тех, кто никогда не программировал под Android, но хотел бы начать.
+                </p>
+                <h2>Android studio</h2>
+                <img src="img/android_studio.png" alt="Android studio screenshot" class="fit">
+                <p>Android studio - рекомендованная Google среда разработки приложений для Android. Android studio можно бесплатно скачать здесь:
+                <a href="http://developer.android.com/intl/ru/sdk/index.html">http://developer.android.com/intl/ru/sdk/index.html</a>
+                По ссылке так же доступна и инструкция по установке на все поддерживаемые ОС. Не буду дублировать её здесь.
+                </p>
+                <p>
+                При первом запуске Android Studio предложит скачать и установить SDK (набор инструментов для разработки). Смело соглашайтесь и качайте предложенную версию. Next, Next, Next, настройки по-умолчанию, всё как всегда.
+                </p>
+                <h2>Создание проекта</h2>
+                <p>Когда установка SDK закончена появляется окно с предложением открыть существующий, или создать новый проект. Мы хотим создать новый!
+                Выбираем Start a new Android Studio project </p>
+                <img src="img/android_studio_1.png" alt="Start a new Android Studio project screenshot" class="fit">
+                <p>задаём название проекта (HelloWorld)</p>
+                <img src="img/android_studio_2.png" alt="Project name screenshot" class="fit">
+                <p>Выбираем Blank Activity</p>
+                <img src="img/android_studio_3.png" alt="Project name screenshot" class="fit">
+                <p>и жмём &quot;готово&quot;. Проект инициализируется, создаётся базовый скелет.</p>
+                <img src="img/android_studio_4.png" alt="Project name screenshot" class="fit">
+                <p>Нажмите закладку Project слева. Откроется боковая панель со структурой проекта.
+                Папка app содержит исходники проекта, а gradle scripts - скрипты для его сборки.
+                Рассмотрим содержимое app.
+                <ul>
+                <li>manifests - xml файлы, которые читает Android, чтобы понять, что делать с нашим приложением.</li>
+                <li>src - исходный код классов нашего приложения на Java (обычно).</li>
+                <li>res - ресурсы нашего приложения (строки, картинки, xml описания форм и т.д.)</li>
+                </ul>
+                </p>
+                <p>Приложение можно уже сейчас запустить на реальном телефоне или эмуляторе Android. Для этого нажмём зелёную кнопку Play сверху на панели инструментов.
+                Теперь Android Studio немного пошуршит своим gradle. Gradle - это система автоматической сборки, последнее поколение в ряду make, cmake, ant, maven и других.
+                Появляется окно выбора устройства для установки скомпилированного приложения. Если ваше Android устройство подключено по USB и на нём включен режим разработчика - оно будет в списке. Ну и всегда можно создать новое "устройство" при помощи встроенного в SDK эмулятора Android. Пока эмулированных устройств нет (красный текст [none] как бы намекает...). Нажмите троеточие рядом с ним.</p>
+                <img src="img/android_studio_5.png" alt="Launch app dialog" class="fit">
+                <p>Жмём Create Virtual Device, выбираем Nexus5, из списка доступных образов выбираем последний x86_amd64.</p>
+                <img src="img/android_studio_8.png" alt="Project name screenshot" class="fit">
+                <p>Когда всё загрузится, выбираем нужное устройство (там где было [none]) и жмём запустить. Через некоторое время эмулированный девайс загрузится и на нём запустится наша программа. Пока в ней только то, что нагенерировала сама AndroidStudio - менюшка и FloatingActionButton со значком письма. Всё это мы вскоре безжалостно удалим.
+                <h2>Activity</h2>
+                <p>
+                Activity - это один экран в приложении Android. Приложения стараются проектировать так, чтобы одной Activity соответствовало одно действие. Например в одной Activity пользователь смотрит список рецептов, в другой просматривает рецепт, а в третьей - редактирует его.
+                Сейчас в нашем приложении одна Activity. Давайте создадим ещё.
+                File/New/Activity/Empty Activity
+                Назовём её банально ActivityTwo. Откроется дизайнер форм, на котором отобразится наша пустая ActitvityTwo. Давайте добавим на неё TextView и зададим какой-нибудь умеренно хулиганский текст, например &quot;А у Вас вся спина белая!&quot;.
+                </p>
+                <p>
+                Activity мы создали, но если сейчас скомпилировать и запустить программу заново, мы ActivityTwo не увидим. Нужно её как то открывать.
+                Для этого создадим на первой ActivityOne кнопку &quot;TheButton&quot; и добавим открытие ActivityTwo в обработчик события onClick нашей кнопки.
+                Делать это в визуальном дизайнере интерфейса не круто. Внизу слева есть две закладки - &quot;Design&quot; и &quot;Text&quot;. Давайте переключимся в режим &quot;Text&quot;. Тут всё менее понятно, но только используя этот режим можно осознано создавать или отлаживать сложные интерфейсы.
+                В менеджере структуры проекта слева в папке res/layout у нас сейчас два файла, относящиеся к ActivityOne: activity_activity_one.xml и content_activity_one.xml. Первый - общее описание Activity, а второй - её наполнение.
+                По-умолчанию Android Studio напихало много лишнего в нашу Activity, давайте уберёмся.
+                Должно получиться следующее:
+                </p>
+                <pre>
+                &lt;?xml version="1.0" encoding="utf-8"?&gt;
+                &lt;android.support.design.widget.CoordinatorLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:fitsSystemWindows="true"
+                    tools:context=".ActivityOne"&gt;
+
+                    &lt;include layout="@layout/content_activity_one" /&gt;
+
+
+                &lt;/android.support.design.widget.CoordinatorLayout&gt;
+                </pre>
+                <p>
+                Вот эта абракадабра - описание Activity в XML формате. XML файлы с описанием форм лежат в папке res/layout вашего проекта.
+                Если по пунктам - внешний tag CoordinatorLayout определяет характер относительного расположения элементов на Activity. Параметры layout_width и layout_height задают размер области. match_parent значит, что область растянется на всю площадь родителя. В нашем случае родитель - ActivityOne. Тег include говорит, что нужно подключить дополнительное xml - описание из content_activity_one.xml.</p>
+                <p>Откроем content_activity_one.xml в дереве проекта. Нас интересует режим Text.
+                Добавим туда кнопку, и назовём её TheButton.</p>
+                <pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_activity_one" tools:context=".ActivityOne"&gt;
+
+    &lt;TextView android:text="Hello World!" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" /&gt;
+    &lt;Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TheButton"
+        android:layout_centerInParent="true"
+        android:text="Press me" /&gt;
+
+&lt;/RelativeLayout&gt;
+
+                </pre>
+                <h2>Intent</h2>
+                <p>Теперь надо открыть ActivityTwo. Тут в дело вступает Intent (намерение). Intent - это объект, с помощью которого наше приложение говорит Android, что оно хочет что-то сделать.
+                Например открыть Activity. Давайте создадим Intent для запуска ActivityTwo. Для этого откроем файл ActivityOne.java, и найдём там метод onCreate первой Activity.
+                Уберём всё связанное с Toolbar и FloatingActionButton - мы их удалили из layout. И добавим обработчик нажатия кнопки.
+                Должно получиться так (имя пакета будет отличаться):
+                </p>
+<pre>
+package com.example.cpro.helloworld;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+
+public class ActivityOne extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_activity_one);
+
+
+        Button bt = (Button) findViewById(R.id.TheButton);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivityOne.this, ActivityTwo.class);
+                startActivity(intent);
+            }
+        });
+    }
+}
+</pre>
+                
+                <p>Давайте разберём, что тут происходит: в обработчике события OnCreate ActivityOne мы привязываем к событию onClick кнопки и в этом обработчике создаём Intent для открытия ActivityTwo. Завершается создание Activity вызовом ф-ии startActivity()
+                </p>
+                <p>Запускаем, проверяем. Теперь наша ActivityTwo запускается по кнопке и показывает умеренно хулиганский текст!
+                В качестве простенького домашнего задания можете добавить на ActivityTwo кнопку для закрытия. Подскажу, что Activity закрывается вызовом ф-ии finish().
+                </p>
+                
+                <h2>Заключение</h2>
+                <p>Мы конечно же только слегка царапнули тему программирования для Android, поэтому если интересно и есть желание продолжать - рекомендую онлайн курсы от
+                <ul>
+                <li>Coursera: <a href="https://www.coursera.org/course/androidpart1">https://www.coursera.org/course/androidpart1</a></li>
+                <li>Udacity: <a href="https://www.udacity.com/course/android-development-for-beginners--ud837">https://www.udacity.com/course/android-development-for-beginners--ud837</a></li>
+                <li>Google: <a href="http://developer.android.com/intl/ru/training/index.html">http://developer.android.com/intl/ru/training/index.html</a></li>
+                </ul>
+                <p>И однозначно, вам понадобится справочная информация с <a href="http://developer.android.com/">http://developer.android.com/</a></p>
+                <p>Исходники того, что получилось можно посмотреть/скачать тут: <a href="https://github.com/C-Pro/AndroidTutorial0">https://github.com/C-Pro/AndroidTutorial0</a></p>
+                <p>Удачи!</p>
+            </div><!-- //main content -->
+        </div><!-- //row -->
+    </div> <!-- //container -->
+
+</body>
+</html>
