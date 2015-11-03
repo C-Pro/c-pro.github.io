@@ -52,6 +52,11 @@
         {
           max-width: 90%;
         }
+        
+        .m
+        {
+         font-family: Courier New, Monospace;
+        }
 
     </style>
 
@@ -91,9 +96,9 @@
                 Папка app содержит исходники проекта, а gradle scripts - скрипты для его сборки.
                 Рассмотрим содержимое app.
                 <ul>
-                <li>manifests - xml файлы, которые читает Android, чтобы понять, что делать с нашим приложением.</li>
-                <li>src - исходный код классов нашего приложения на Java (обычно).</li>
-                <li>res - ресурсы нашего приложения (строки, картинки, xml описания форм и т.д.)</li>
+                <li><span class="m">manifests</span> - xml файлы, которые читает Android, чтобы понять, что делать с нашим приложением.</li>
+                <li><span class="m">src</span> - исходный код классов нашего приложения на Java (обычно).</li>
+                <li><span class="m">res</span> - ресурсы нашего приложения (строки, картинки, xml описания форм и т.д.)</li>
                 </ul>
                 </p>
                 <p>Приложение можно уже сейчас запустить на реальном телефоне или эмуляторе Android. Для этого нажмём зелёную кнопку Play сверху на панели инструментов.
@@ -105,70 +110,66 @@
                 <p>Когда всё загрузится, выбираем нужное устройство (там где было [none]) и жмём запустить. Через некоторое время эмулированный девайс загрузится и на нём запустится наша программа. Пока в ней только то, что нагенерировала сама AndroidStudio - менюшка и FloatingActionButton со значком письма. Всё это мы вскоре безжалостно удалим.
                 <h2>Activity</h2>
                 <p>
-                Activity - это один экран в приложении Android. Приложения стараются проектировать так, чтобы одной Activity соответствовало одно действие. Например в одной Activity пользователь смотрит список рецептов, в другой просматривает рецепт, а в третьей - редактирует его.
+                <a href="http://developer.android.com/intl/ru/reference/android/app/Activity.html">Activity</a> - это один экран в приложении Android. Приложения стараются проектировать так, чтобы одной <a href="http://developer.android.com/intl/ru/reference/android/app/Activity.html">Activity</a> соответствовало одно действие. Например в одной <a href="http://developer.android.com/intl/ru/reference/android/app/Activity.html">Activity</a> пользователь смотрит список рецептов, в другой просматривает рецепт, а в третьей - редактирует его.
                 Сейчас в нашем приложении одна Activity. Давайте создадим ещё.
-                File/New/Activity/Empty Activity
-                Назовём её банально ActivityTwo. Откроется дизайнер форм, на котором отобразится наша пустая ActitvityTwo. Давайте добавим на неё TextView и зададим какой-нибудь умеренно хулиганский текст, например &quot;А у Вас вся спина белая!&quot;.
+                <span class="m">File/New/Activity/Empty Activity</span>
+                Назовём её банально <span class="m">ActivityTwo</span>. Откроется дизайнер форм, на котором отобразится наша пустая <span class="m">ActitvityTwo</span>. Давайте добавим на неё <span class="m">TextView</span> и зададим какой-нибудь умеренно хулиганский текст, например &quot;А у Вас вся спина белая!&quot;.
                 </p>
                 <p>
-                Activity мы создали, но если сейчас скомпилировать и запустить программу заново, мы ActivityTwo не увидим. Нужно её как то открывать.
-                Для этого создадим на первой ActivityOne кнопку &quot;TheButton&quot; и добавим открытие ActivityTwo в обработчик события onClick нашей кнопки.
+                <a href="http://developer.android.com/intl/ru/reference/android/app/Activity.html">Activity</a> мы создали, но если сейчас скомпилировать и запустить программу заново, мы <span class="m">ActivityTwo</span> не увидим. Нужно её как то открывать.
+                Для этого создадим на первой <span class="m">ActivityOne</span> кнопку &quot;<span class="m">TheButton</span>&quot; и добавим открытие <span class="m">ActivityTwo</span> в обработчик события <span class="m">onClick</span> нашей кнопки.
                 Делать это в визуальном дизайнере интерфейса не круто. Внизу слева есть две закладки - &quot;Design&quot; и &quot;Text&quot;. Давайте переключимся в режим &quot;Text&quot;. Тут всё менее понятно, но только используя этот режим можно осознано создавать или отлаживать сложные интерфейсы.
-                В менеджере структуры проекта слева в папке res/layout у нас сейчас два файла, относящиеся к ActivityOne: activity_activity_one.xml и content_activity_one.xml. Первый - общее описание Activity, а второй - её наполнение.
+                В менеджере структуры проекта слева в папке <span class="m">res/layout</span> у нас сейчас два файла, относящиеся к <span class="m">ActivityOne</span>: <span class="m">activity_activity_one.xml</span> и <span class="m">content_activity_one.xml</span>. Первый - общее описание Activity, а второй - её наполнение.
                 По-умолчанию Android Studio напихало много лишнего в нашу Activity, давайте уберёмся.
                 Должно получиться следующее:
                 </p>
-                <pre>
-                &lt;?xml version="1.0" encoding="utf-8"?&gt;
-                &lt;android.support.design.widget.CoordinatorLayout
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                    android:layout_height="match_parent" android:fitsSystemWindows="true"
-                    tools:context=".ActivityOne"&gt;
+<pre style='color:#000000;background:#ffffff;'><span style='color:#7f0055; '>&lt;?</span><span style='color:#7f0055; font-weight:bold; '>xml</span><span style='color:#7f0055; '> </span><span style='color:#7f0055; '>version</span><span style='color:#7f0055; '>=</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; font-weight:bold; '>1.0</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; '> </span><span style='color:#7f0055; '>encoding</span><span style='color:#7f0055; '>=</span><span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>utf-8</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; '>?></span>
+<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; '>android.support.design.widget.CoordinatorLayout</span>
+    xmlns:android=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>http</span><span style='color:#2a00ff; '>:</span><span style='color:#7f0055; font-weight:bold; '>//</span><span style='color:#3f3fbf; '>schemas.android.com</span><span style='color:#3f3fbf; '>/apk/res/android</span><span style='color:#2a00ff; '>"</span>
+    xmlns:app=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>http</span><span style='color:#2a00ff; '>:</span><span style='color:#7f0055; font-weight:bold; '>//</span><span style='color:#3f3fbf; '>schemas.android.com</span><span style='color:#3f3fbf; '>/apk/res-auto</span><span style='color:#2a00ff; '>"</span>
+    xmlns:tools=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>http</span><span style='color:#2a00ff; '>:</span><span style='color:#7f0055; font-weight:bold; '>//</span><span style='color:#3f3fbf; '>schemas.android.com</span><span style='color:#3f3fbf; '>/tools</span><span style='color:#2a00ff; '>"</span> android:layout_width=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>match_parent</span><span style='color:#2a00ff; '>"</span>
+    android:layout_height=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>match_parent</span><span style='color:#2a00ff; '>"</span> android:fitsSystemWindows=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>true</span><span style='color:#2a00ff; '>"</span>
+    tools:context=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>.ActivityOne</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; '>></span>
 
-                    &lt;include layout="@layout/content_activity_one" /&gt;
+    <span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; '>include</span> layout=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>@layout/content_activity_one</span><span style='color:#2a00ff; '>"</span> <span style='color:#7f0055; '>/></span>
 
 
-                &lt;/android.support.design.widget.CoordinatorLayout&gt;
-                </pre>
+<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; '>android.support.design.widget.CoordinatorLayout</span><span style='color:#7f0055; '>></span>
+</pre>
                 <p>
-                Вот эта абракадабра - описание Activity в XML формате. XML файлы с описанием форм лежат в папке res/layout вашего проекта.
-                Если по пунктам - внешний tag CoordinatorLayout определяет характер относительного расположения элементов на Activity. Параметры layout_width и layout_height задают размер области. match_parent значит, что область растянется на всю площадь родителя. В нашем случае родитель - ActivityOne. Тег include говорит, что нужно подключить дополнительное xml - описание из content_activity_one.xml.</p>
-                <p>Откроем content_activity_one.xml в дереве проекта. Нас интересует режим Text.
-                Добавим туда кнопку, и назовём её TheButton.</p>
-                <pre>
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_activity_one" tools:context=".ActivityOne"&gt;
+                Вот эта абракадабра - описание <a href="http://developer.android.com/intl/ru/reference/android/app/Activity.html">Activity</a> в XML формате. XML файлы с описанием форм лежат в папке <span class="m">res/layout</span> вашего проекта.
+                Если по пунктам - внешний тэг <span class="m">CoordinatorLayout</span> определяет характер относительного расположения элементов на Activity. Параметры <span class="m">layout_width</span> и <span class="m">layout_height</span> задают размер области. <span class="m">match_parent</span> значит, что область растянется на всю площадь родителя. В нашем случае родитель - <span class="m">ActivityOne</span>. Тег <span class="m">include</span> говорит, что нужно подключить дополнительное xml описание из <span class="m">content_activity_one.xml</span>.</p>
+                <p>Откроем <span class="m">content_activity_one.xml</span> в дереве проекта. Нас интересует режим Text.
+                Добавим туда кнопку, и назовём её <span class="m">TheButton</span>.</p>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#7f0055; '>&lt;?</span><span style='color:#7f0055; font-weight:bold; '>xml</span><span style='color:#7f0055; '> </span><span style='color:#7f0055; '>version</span><span style='color:#7f0055; '>=</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; font-weight:bold; '>1.0</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; '> </span><span style='color:#7f0055; '>encoding</span><span style='color:#7f0055; '>=</span><span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>utf-8</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; '>?></span>
+<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; '>RelativeLayout</span> xmlns:android=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>http</span><span style='color:#2a00ff; '>:</span><span style='color:#7f0055; font-weight:bold; '>//</span><span style='color:#3f3fbf; '>schemas.android.com</span><span style='color:#3f3fbf; '>/apk/res/android</span><span style='color:#2a00ff; '>"</span>
+    xmlns:tools=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>http</span><span style='color:#2a00ff; '>:</span><span style='color:#7f0055; font-weight:bold; '>//</span><span style='color:#3f3fbf; '>schemas.android.com</span><span style='color:#3f3fbf; '>/tools</span><span style='color:#2a00ff; '>"</span>
+    xmlns:app=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>http</span><span style='color:#2a00ff; '>:</span><span style='color:#7f0055; font-weight:bold; '>//</span><span style='color:#3f3fbf; '>schemas.android.com</span><span style='color:#3f3fbf; '>/apk/res-auto</span><span style='color:#2a00ff; '>"</span> android:layout_width=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>match_parent</span><span style='color:#2a00ff; '>"</span>
+    android:layout_height=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>match_parent</span><span style='color:#2a00ff; '>"</span> android:paddingLeft=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>@dimen/activity_horizontal_margin</span><span style='color:#2a00ff; '>"</span>
+    android:paddingRight=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>@dimen/activity_horizontal_margin</span><span style='color:#2a00ff; '>"</span>
+    android:paddingTop=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>@dimen/activity_vertical_margin</span><span style='color:#2a00ff; '>"</span>
+    android:paddingBottom=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>@dimen/activity_vertical_margin</span><span style='color:#2a00ff; '>"</span>
+    app:layout_behavior=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>@string/appbar_scrolling_view_behavior</span><span style='color:#2a00ff; '>"</span>
+    tools:showIn=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>@layout/activity_activity_one</span><span style='color:#2a00ff; '>"</span> tools:context=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>.ActivityOne</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; '>></span>
 
-    &lt;TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" /&gt;
-    &lt;Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/TheButton"
-        android:layout_centerInParent="true"
-        android:text="Press me" /&gt;
+    <span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; '>TextView</span> android:text=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Hello World!</span><span style='color:#2a00ff; '>"</span> android:layout_width=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>wrap_content</span><span style='color:#2a00ff; '>"</span>
+        android:layout_height=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>wrap_content</span><span style='color:#2a00ff; '>"</span> <span style='color:#7f0055; '>/></span>
+    <span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; '>Button</span>
+        android:layout_width=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>wrap_content</span><span style='color:#2a00ff; '>"</span>
+        android:layout_height=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>wrap_content</span><span style='color:#2a00ff; '>"</span>
+        android:id=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>@+id/TheButton</span><span style='color:#2a00ff; '>"</span>
+        android:layout_centerInParent=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>true</span><span style='color:#2a00ff; '>"</span>
+        android:text=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Press me</span><span style='color:#2a00ff; '>"</span> <span style='color:#7f0055; '>/></span>
 
-&lt;/RelativeLayout&gt;
-
-                </pre>
-                <h2>Intent</h2>
-                <p>Теперь надо открыть ActivityTwo. Тут в дело вступает Intent (намерение). Intent - это объект, с помощью которого наше приложение говорит Android, что оно хочет что-то сделать.
-                Например открыть Activity. Давайте создадим Intent для запуска ActivityTwo. Для этого откроем файл ActivityOne.java, и найдём там метод onCreate первой Activity.
-                Уберём всё связанное с Toolbar и FloatingActionButton - мы их удалили из layout. И добавим обработчик нажатия кнопки.
+<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; '>RelativeLayout</span><span style='color:#7f0055; '>></span>
+</pre>
+                <h2><a href="http://developer.android.com/intl/ru/reference/android/content/Intent.html">Intent</a></h2>
+                <p>Теперь надо открыть <span class="m">ActivityTwo</span>. Тут в дело вступает <span class="m"><a href="http://developer.android.com/intl/ru/reference/android/content/Intent.html">Intent</a></span> (намерение). <span class="m"><a href="http://developer.android.com/intl/ru/reference/android/content/Intent.html">Intent</a></span> - это объект, с помощью которого наше приложение говорит Android, что оно хочет что-то сделать.
+                Например открыть <span class="m">Activity</span>. Давайте создадим <span class="m"><a href="http://developer.android.com/intl/ru/reference/android/content/Intent.html">Intent</a></span> для запуска <span class="m">ActivityTwo</span>. Для этого откроем файл <span class="m">ActivityOne.java</span>, и найдём там метод <span class="m">onCreate</span> первой <span class="m">Activity</span>.
+                Уберём всё связанное с <span class="m">Toolbar</span> и <span class="m">FloatingActionButton</span> - мы их удалили из layout. И добавим обработчик нажатия кнопки.
                 Должно получиться так (имя пакета будет отличаться):
                 </p>
-<pre>
-package com.example.cpro.helloworld;
+<pre style='color:#000000;background:#ffffff;'><span style='color:#7f0055; font-weight:bold; '>package</span> com.example.cpro.helloworld;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -176,39 +177,41 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class ActivityOne extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_one);
-
-
-        Button bt = (Button) findViewById(R.id.TheButton);
-        bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ActivityOne.this, ActivityTwo.class);
-                startActivity(intent);
-            }
+public <span style='color:#7f0055; font-weight:bold; '>class</span> ActivityOne extends AppCompatActivity <span style='color:#3f7f59; '>{</span>
+<span style='color:#3f7f59; '></span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;@Override</span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;protected void onCreate(Bundle savedInstanceState) {</span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;super.onCreate(savedInstanceState);</span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;setContentView(R.layout.activity_activity_one);</span>
+<span style='color:#3f7f59; '></span>
+<span style='color:#3f7f59; '></span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;Button bt = (Button) findViewById(R.id.TheButton);</span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;bt.setOnClickListener(new View.OnClickListener() {</span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;@Override</span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;public void onClick(View view) {</span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;Intent intent = new Intent(ActivityOne.this, ActivityTwo.class);</span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;startActivity(intent);</span>
+<span style='color:#3f7f59; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}</span>
         });
     }
 }
 </pre>
                 
-                <p>Давайте разберём, что тут происходит: в обработчике события OnCreate ActivityOne мы привязываем к событию onClick кнопки и в этом обработчике создаём Intent для открытия ActivityTwo. Завершается создание Activity вызовом ф-ии startActivity()
+                <p>Давайте разберём, что тут происходит: в обработчике события <span class="m">OnCreate ActivityOne</span> мы создаём новый обработчик события <span class="m">onClick</span> кнопки и в этом обработчике создаём <span class="m"><a href="http://developer.android.com/intl/ru/reference/android/content/Intent.html">Intent</a></span> для открытия <span class="m">ActivityTwo</span>. Завершается создание <span class="m">Activity</span> вызовом ф-ии <span class="m">startActivity()</span>
                 </p>
-                <p>Запускаем, проверяем. Теперь наша ActivityTwo запускается по кнопке и показывает умеренно хулиганский текст!
-                В качестве простенького домашнего задания можете добавить на ActivityTwo кнопку для закрытия. Подскажу, что Activity закрывается вызовом ф-ии finish().
+                <p>Запускаем, проверяем. Теперь наша <span class="m">ActivityTwo</span> запускается по кнопке и показывает умеренно хулиганский текст!
+                В качестве простенького домашнего задания можете добавить на <span class="m">ActivityTwo</span> кнопку для закрытия. Подскажу, что <span class="m">Activity</span> закрывается вызовом ф-ии <span class="m">finish()</span>.
                 </p>
                 
-                <h2>Заключение</h2>
+                <h2>Заключение и ссылки</h2>
                 <p>Мы конечно же только слегка царапнули тему программирования для Android, поэтому если интересно и есть желание продолжать - рекомендую онлайн курсы от
                 <ul>
                 <li>Coursera: <a href="https://www.coursera.org/course/androidpart1">https://www.coursera.org/course/androidpart1</a></li>
                 <li>Udacity: <a href="https://www.udacity.com/course/android-development-for-beginners--ud837">https://www.udacity.com/course/android-development-for-beginners--ud837</a></li>
                 <li>Google: <a href="http://developer.android.com/intl/ru/training/index.html">http://developer.android.com/intl/ru/training/index.html</a></li>
                 </ul>
+                <p>Android Studio: <a href="http://developer.android.com/intl/ru/sdk/index.html">http://developer.android.com/intl/ru/sdk/index.html</a></p>
+                <p>Основной ресурс сообщества разработчиков (статьи, новости, всё такое): <a href="http://android-developers.blogspot.com">http://android-developers.blogspot.com</a></p>
                 <p>И однозначно, вам понадобится справочная информация с <a href="http://developer.android.com/">http://developer.android.com/</a></p>
                 <p>Исходники того, что получилось можно посмотреть/скачать тут: <a href="https://github.com/C-Pro/AndroidTutorial0">https://github.com/C-Pro/AndroidTutorial0</a></p>
                 <p>Удачи!</p>
