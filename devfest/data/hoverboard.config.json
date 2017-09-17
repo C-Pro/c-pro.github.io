@@ -1,0 +1,159 @@
+{
+  "url": "https://gdgvl.ru/devfest/",
+  "startDate": "2017-10-07T12:00:00+10:00",
+  "endDate": "2017-10-07T19:00:00+10:00",
+  "analytics": {
+    "prod": "UA-43847636-2",
+    "dev": "UA-43643469-9"
+  },
+  "organizer": {
+    "name": "GDG Vladivostok",
+    "twitter": ""
+  },
+  "webapp": {
+    "shortName": "DevFest",
+    "themeColor": "#F57C00",
+    "backgroundColor": "#F57C00"
+  },
+  "firebase": {
+    "name": "hoverboard-experimental",
+    "domain": "hoverboard-experimental.firebaseapp.com",
+    "database": "https://hoverboard-experimental.firebaseio.com",
+    "api": "AIzaSyALDa2D7CMhK_wt2VkET1MaJuQXYVUJd2I",
+    "userSessionsPath": "/userSessions",
+    "ratingsPath": "/ratings",
+    "indexedDbSession": "hoverboard"
+  },
+  "mailchimp": {
+    "url": "https://gdg.us11.list-manage.com/subscribe/post?u=e1233c7dbb60448fbf3a845b3&amp;id=d971b8da5c",
+    "name": "b_b7e853a79164ddfdbda3ed77b_7993e39fbe"
+  },
+  "dateFormat": {
+    "locale": "ru-RU",
+    "blog": {"month": "numeric", "day": "numeric", "year": "numeric"}
+  },
+  "hashtag": "gdgvl",
+  "disqusShortName": "",
+  "tweetsSource": "",
+  "partnershipProposition": "",
+  "videosSessionsUrl": null,
+  "enableSessionsRating": false,
+  "navigation": [
+    {
+      "route": "home",
+      "permalink": "/"
+    },
+    {
+      "route": "blog",
+      "permalink": "/blog/"
+    },
+    {
+      "route": "schedule",
+      "permalink": "/schedule/"
+    },
+    {
+      "route": "speakers",
+      "permalink": "/speakers/"
+    },
+    {
+      "route": "team",
+      "permalink": "/team/"
+    }
+  ],
+  "social": [
+    {
+      "name": "twitter",
+      "nickname": "VLDC",
+      "url": "https://twitter.com/vldcru"
+    },
+    {
+      "name": "gplus",
+      "nickname": "+GDGVladivostok",
+      "url": "https://plus.google.com/+GDGVladivostok"
+    }
+  ],
+  "location": {
+    "apiKey": "AIzaSyAHhBrj-TvCddFfu9Q3UqKJGzDRbFsXV4o",
+    "name": "TBD",
+    "address": "ул. НЕИЗВЕСТНАЯ",
+    "link": "http://domvl.ru",
+    "pointer": {
+      "latitude": 43.1160936,
+      "longitude": 131.879185,
+      "zoom": 15
+    },
+    "mapCenter": {
+      "latitude": 43.1160936,
+      "longitude": 131.879185
+    },
+    "images": [
+      "/images/backgrounds/location1.jpg",
+      "/images/backgrounds/location2.jpg",
+      "/images/backgrounds/location3.jpg"
+    ]
+  },
+  "gallery": {
+    "albumUrl": "https://goo.gl/photos/6ViRHFaRffN4ixNe6",
+    "photos": {
+      "big": "/images/backgrounds/2016_1.jpg",
+      "small": [
+        "/images/backgrounds/2016_2.jpg",
+        "/images/backgrounds/2016_3.jpg"
+      ]
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Главная",
+      "headerSettings": {
+        "backgroundColor": "#FF9800",
+        "backgroundImage": "/images/backgrounds/home.png",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff",
+        "video": null,
+        "hideLogo": true,
+        "minHeight": "360px"
+      }
+    },
+    "blog": {
+      "title": "Новости",
+      "headerSettings": {
+        "backgroundColor": "#03a9f4",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    },
+    "speakers": {
+      "title": "Докладчики",
+      "headerSettings": {
+        "backgroundColor": "#3f51b5",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    },
+    "schedule": {
+      "title": "Расписание",
+      "headerSettings": {
+        "backgroundColor": "#673ab7",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    },
+    "team": {
+      "title": "Команда",
+      "headerSettings": {
+        "backgroundColor": "#009688",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    },
+    "cod": {
+      "title": "Правила",
+      "headerSettings": {
+        "backgroundColor": "#673ab7",
+        "fontColor": "#fff",
+        "tabBarColor": "#fff"
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "title": "GDG DevFest Vladivostok 2017",
+  "description": "Конференция от разработчиков для разработчиков. О технологиях Google и не только.",
+  "keywords": "event, gdg, gde, devfest, google, programming, android, chrome, polymer, developers, web, cloud, androiddev",
+  "dates": "7 Октября 2017",
+  "locationAddressShort": "Владивосток",
+  "motto": "Потратим!",
+  "playIcon": "Как это было в 2016",
+  "c4p": "Стать докладчиком",
+  "buyTicket": "Зарегистрироваться",
+  "backToTop": "Вверх",
+  "subscribe": "Подписаться",
+  "yourEmail": "Ваш e-mail",
+  "subscribeNote": "Никакого спама, только анонсы ИТ событий!",
+  "contactUs": "Связаться с нами",
+  "ticketsTitle": "Регистрация",
+  "ticketsDetails": "Tickets grant access to all conference sections, coffee breaks, lunch and party. Accommodation is NOT included in the ticket price.",
+  "close": "Закрыть",
+  "soldOutTickets": "Sold Out",
+  "socialTitle": "Соцсети",
+  "socialMotto": "Подписывайтесь на нас в",
+  "beforeHashtag": "Что нового",
+  "clickToViewPhotos": "Ещё фото",
+  "partners": "Партнёры",
+  "becomePartner": "Стать партнёром",
+  "featuredVideosTitle": "Видео DevFest Vladivostok 2016",
+  "featuredVideosViewAll": "Все видео",
+  "featuredPeopleTitle": "Наши спикеры",
+  "featuredPeopleViewAll": "Все спикеры",
+  "action": "Как это было",
+  "locationTitle": "Коворкинг DOM",
+  "locationDescription": "Коворкинг DOM это хорошо",
+  "locationAddress": "Тигровая 30",
+  "organizerTitle": "Организатор",
+  "aboutOrganizers": "<a href='https://gdgvl.ru/' target='_blank'>GDG Vladivostok</a> и <a href='https://vldc.org/' target='_blank'>VLDC</a>",
+  "openTeamPage": "Страница команды",
+  "whatIsGdg": "Что такое GDG?",
+  "aboutGdg": "Google Developers Group (GDG) - открытое сообщество разработчиков и ИТ специалистов, использующих технологии Google и не только",
+  "readMore": "Ещё",
+  "copyLink": "Скопировать ссылку",
+  "filteredBy": "отфильтровано по",
+  "clearAll": "Очистить",
+  "filter": "Фильтр",
+  "latestNews": "Новости",
+  "continueReading": "Дальше",
+  "viewPresentation": "Презентация",
+  "viewVideo": "Видео",
+  "skills": "Навыки",
+  "share": "Поделиться",
+  "shareWith": "Поделиться с помощью",
+  "signIn": "Войти",
+  "signOut": "Выйти",
+  "mySchedule": "Моё расписание",
+  "browseMore": "Ещё события",
+  "youShouldSignInSessions": "Авторизуйтесь для сохранения",
+  "youShouldSignInRating": "Авторизуйтесь для голосования",
+  "offlineMessage": "Вы не в сети",
+  "removedFromSchedule": "Удалено из расписания",
+  "addedToSchedule": "Добавлено в расписание",
+  "rateSession": "Оценить",
+  "footerBlocks": [
+    {
+      "title": "Для гостей",
+      "links": [
+        {
+          "text": "Команда",
+          "url": "/team/",
+          "newTab": false
+        },
+        {
+          "text": "Google Developers",
+          "url": "https://developers.google.com/",
+          "newTab": true
+        },
+        {
+          "text": "GDG DevFest Vladivostok 2016",
+          "url": "http://gdgvl.ru/devfest16/",
+          "newTab": true
+        }
+      ]
+    }
+  ],
+  "contactBlock": {
+    "links": [
+      {
+        "text": "devfest@google.com",
+        "url": "mailto:devfest@google.com"
+      }
+    ]
+  },
+  "teamPageTitle": "Команда",
+  "teamPageText": "DevFest проводится совместно сообществами GDG Владиовсток и VLDC. GDG (Google Developers Group) - группа для разработчиков, администраторов, дизайнеров и других людей, связанных с IT, обменивающихся информацией, знаниями и опытом в использовании технологий Google, таких как Android, Chrome, Angular, TensorFlow, Google APIs, Cloud Platform и т.п. VLDC (VLadivostok developers Conference) - неумолкающая IT тусовка Владивостока и Приморского края, без определённой направленности и тематки - за мир во всём мире. Вместе мы проводим порядка 10 мероприятий в год и постепенно увеличиваем их количество и качество.",
+  "statistics": [
+    {
+      "counter": 200,
+      "caption": "Посетителей"
+    },
+    {
+      "counter": 2,
+      "caption": "Потока"
+    },
+    {
+      "counter": 10,
+      "caption": "Сессий"
+    }
+  ],
+  "callToAction": null
+}
